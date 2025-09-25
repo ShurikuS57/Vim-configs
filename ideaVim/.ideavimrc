@@ -1,0 +1,246 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+set clipboard=unnamed,unnamedplus
+set NERDTree
+
+" Disable macros
+set nomacro
+nnoremap q <Nop>
+vnoremap q <Nop>
+
+" keyboard
+set keep-english-in-normal
+set keymap=russian-jcuken  " или russian-ya (в зависимости от вашей раскладки)
+set iminsert=0             " по умолчанию английская раскладка
+set imsearch=0             " поиск в английской раскладке
+
+set visualbell
+set timeoutlen=800 " Задержка для leader-комбинаций
+
+" Do incremental searching.
+set incsearch
+set ignorecase
+set smartcase
+set hlsearch "
+set incsearch "
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" leader
+map <space> <nop>
+let mapleader="\<space>"
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
+
+" -- Map IDE actions to IdeaVim --
+nmap <Leader>f :action ReformatCode<CR>
+
+" Map \b to toggle the breakpoint on the current line
+map \b <Action>(ToggleLineBreakpoint)
+
+" Run app space
+nmap <Leader>rr <Action>(Run)
+nmap <Leader>dd <Action>(Debug)
+nmap <Leader>bb <Action>(BuildMenu)
+nmap <Leader>ss <Action>(Stop)
+
+" Close current tab
+nmap gx :action CloseContent<CR><Esc>
+nnoremap gi :action GotoImplementation<CR>
+
+" Navigation back
+nnoremap gb :action Back<CR>
+" Navigation forward
+nnoremap gf :action Forward<CR>
+
+" Find
+map \f <Action>(Find)
+map \F <Action>(FindInPath)
+map \o <Action>(GotoFile)
+
+
+" window
+nmap <S-j> <Action>(PreviousTab)
+nmap <S-k> <Action>(NextTab)
+nmap <leader>p <Action>(PinActiveEditorTab)
+
+nmap <leader>1 <Action>(GoToTab1)
+nmap <leader>2 <Action>(GoToTab2)
+nmap <leader>3 <Action>(GoToTab3)
+nmap <leader>4 <Action>(GoToTab4)
+nmap <leader>5 <Action>(GoToTab5)
+nmap <leader>6 <Action>(GoToTab6)
+nmap <leader>7 <Action>(GoToTab7)
+nmap <leader>8 <Action>(GoToTab8)
+nmap <leader>9 <Action>(GoToTab9)
+
+" better HJKL
+map H ^
+map L $
+
+" ideavim settings
+set ideajoin
+set ideamarks
+set idearefactormode=normal
+
+" better escape
+imap jk <Esc>
+imap jj <Esc>
+
+" code
+map <leader>c <Action>(CommentByLineComment)
+map <leader>C <Action>(CommentByBlockComment)
+nmap <leader>qf <Action>(ShowIntentionActions)
+nmap <leader>se <Action>(ShowErrorDescription)
+nmap <leader>om <Action>(OverrideMethods)
+nmap <leader>im <Action>(ImplementMethods)
+nmap <leader>rc <Action>(ReformatCode)
+nmap <leader>ic <Action>(InspectCode)
+nmap <leader>so <Action>(SelectAllOccurrences)
+nmap <leader>gc <Action>(Generate)
+nmap <leader>gt <Action>(GoToTest)
+imap <C-s> <Action>(ParameterInfo)
+map <C-s> <Action>(ParameterInfo)
+
+" refactor
+nmap <leader>rn <Action>(RenameElement)
+nmap <leader>re <Action>(Refactorings.QuickListPopupAction)
+nmap <leader>uw <Action>(Unwrap)
+nmap <leader>sw <Action>(SurroundWith)
+nmap <leader>sd <Action>(SafeDelete)
+nmap <leader>oi <Action>(OptimizeImports)
+nnoremap <Leader>ef :action ExtractFunction<CR>i
+vnoremap <Leader>ef :action ExtractFunction<CR>i
+
+" hierarchy
+nmap <leader>hc <Action>(CallHierarchy)
+nmap <leader>hm <Action>(MethodHierarchy)
+
+" collapse
+nmap zz <Action>(ExpandCollapseToggleAction)
+nmap za <Action>(CollapseAllRegions)
+nmap zA <Action>(ExpandAllRegions)
+
+" zen
+nmap <leader>z <Action>(ToggleZenMode)
+
+" []
+nmap [b <Action>(PreviousTab)
+nmap ]b <Action>(NextTab)
+nmap [g <Action>(GotoPreviousError)
+nmap ]g <Action>(GotoNextError)
+nmap [u <Action>(GotoPrevElementUnderCaretUsage)
+nmap ]u <Action>(GotoNextElementUnderCaretUsage)
+nmap [o <Action>(PreviousOccurence)
+nmap ]o <Action>(NextOccurence)
+nmap [m <Action>(MethodUp)
+nmap ]m <Action>(MethodDown)
+nmap [c <Action>(JumpToLastChange)
+nmap ]c <Action>(JumpToNextChange)
+
+" terminal
+nmap <leader>tt <Action>(ActivateTerminalToolWindow)
+nmap <leader>tc <Action>(Terminal.OpenInTerminal)
+
+" bookmark
+nmap mm <Action>(ToggleBookmark)
+nmap ms <Action>(ShowBookmarks)
+
+" todo
+nmap <leader>to <Action>(ActivateTODOToolWindow)
+
+" idea join
+nmap \\jl <Action>(EditorJoinLines)
+
+" vcs
+nmap <leader>v <Action>(VcsGroups)
+
+" open IdeaVim settings
+nmap \\v <Action>(VimActions)
+
+"Panels
+nnoremap <Leader>l :action ActivateLogcatToolWindow<CR>
+nmap <Leader>q :action HideAllWindows<CR>
+
+" Russian keymap
+map й q
+map ц w
+map у e
+map к r
+map е t
+map н y
+map г u
+map ш i
+map щ o
+map з p
+map х [
+map ъ ]
+map ф a
+map ы s
+map в d
+map а f
+map п g
+map р h
+map о j
+map л k
+map д l
+map ж ;
+map э '
+map ё \
+map я z
+map ч x
+map с c
+map м v
+map и b
+map т n
+map ь m
+map б ,
+map ю .
+map Й Q
+map Ц W
+map У E
+map К R
+map Е T
+map Н Y
+map Г U
+map Ш I
+map Щ O
+map З P
+map Х {
+map Ъ }
+map Ф A
+map Ы S
+map В D
+map А F
+map П G
+map Р H
+map О J
+map Л K
+map Д L
+map Ж :
+map Э "
+map Я Z
+map Ч X
+map С C
+map М V
+map И B
+map Т N
+map Ь M
+map Б <
+map Ю >
+map Ё /|
