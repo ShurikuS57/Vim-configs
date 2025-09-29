@@ -1,0 +1,76 @@
+{
+  "keyMappings": "# Insert your preferred key mappings here.\nmap e scrollPageUp",
+  "newTabUrl": "www.google.com",
+  "ignoreKeyboardLayout": true,
+  "settingsVersion": "2.3",
+  "exclusionRules": [
+    {
+      "passKeys": "",
+      "pattern": "https?://mail.google.com/*"
+    },
+    {
+      "passKeys": "dminrotu",
+      "pattern": "https?://cp.vdsina.ru/*"
+    },
+    {
+      "passKeys": "dminrotu",
+      "pattern": "https://monkeytype.com/"
+    },
+    {
+      "passKeys": "dminrotu",
+      "pattern": "vdsina.ru"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://cp.vdsina.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://adamscott.github.io/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://poki.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.typingtest.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.edclub.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://openvim.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://openvim.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.ratatype.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.ratatype.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://consumer.huawei.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.linkedin.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://scratch.mit.edu/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://192.168.1.101:5800/*"
+    }
+  ]
+}
